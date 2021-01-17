@@ -17,7 +17,9 @@ export default class Form extends Component {
               id="search"
               required
             />
-            <button type="submit">Get Books!</button>
+            <button type="submit">
+              <strong>Get Books!</strong>
+            </button>
           </div>
           <div className="Form_filters">
             <div className="Form_print">
