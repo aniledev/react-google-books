@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "../Styles/BookTitle.css";
 
-export default class BookTitle extends Component {
-  render() {
-    return <div className="BookTitle">Book Title</div>;
-  }
+export default function BookTitle(props) {
+  return <div className="BookTitle">{props.title}</div>;
 }

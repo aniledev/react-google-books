@@ -4,14 +4,17 @@ import BookTitle from "./BookTitle";
 import BookInfo from "./BookInfo";
 import BookImg from "./BookImg";
 
-export default class Book extends Component {
-  render() {
-    return (
-      <div className="Book">
-        <BookTitle />
-        <BookInfo />
-        <BookImg />
-      </div>
-    );
-  }
+export default function Book(props) {
+  return (
+    <div className="Book">
+      Individual Book Component
+      <BookTitle title={props.title} />
+      <BookInfo
+        author={props.author}
+        price={props.price}
+        description={props.description}
+      />
+      <BookImg url={props.image_url} />
+    </div>
+  );
 }

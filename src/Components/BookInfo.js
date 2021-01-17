@@ -1,8 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "../Styles/BookInfo.css";
 
-export default class BookInfo extends Component {
-  render() {
-    return <div className="BookInfo">BookInfo</div>;
-  }
+export default function BookInfo(props) {
+  return (
+    <div className="BookInfo">
+      <div className="BookInfo_author">{props.author}</div>
+      <div className="BookInfo_price">{props.price}</div>
+      <div className="BookInfo_description">{props.description}</div>
+    </div>
+  );
 }

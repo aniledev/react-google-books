@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "../Styles/BookImg.css";
 
-export default class BookImg extends Component {
-  render() {
-    return <div className="BookImg">Book Image</div>;
-  }
+export default function BookImg(props) {
+  return <div className="BookImg">{props.url}</div>;
 }
