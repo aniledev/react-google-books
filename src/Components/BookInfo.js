@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/BookInfo.css";
+import BookImg from "./BookImg";
 
 export default function BookInfo(props) {
   return (
