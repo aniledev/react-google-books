@@ -1,5 +1,9 @@
 .BookInfo {
-  border: 2px gray solid;
-  width: 50%;
+  width: 75%;
   text-align: left;
+  padding-left: 30px;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }

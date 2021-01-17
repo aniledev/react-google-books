@@ -16,6 +16,7 @@ export default function Book(props) {
           price={props.price}
           description={props.description}
         />
+        <hr />
       </div>
     </div>
   );
