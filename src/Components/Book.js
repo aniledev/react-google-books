@@ -16,7 +16,9 @@ export default function Book(props) {
           price={props.price}
           description={props.description}
         />
-        <hr />
+      </div>
+      <div className="horizontal_rule">
+        <hr align="right" />
       </div>
     </div>
   );

@@ -2,5 +2,15 @@
   display: flex;
   flex-direction: row;
   padding-top: 15px;
-  padding-bottom: 50px;
+}
+
+.horizontal_rule {
+  margin-right: 125px;
+}
+
+hr {
+  background-color: #f3f3f3;
+  height: 1px;
+  width: 70%;
+  margin-bottom: 30px;
 }
