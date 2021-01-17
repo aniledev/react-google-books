@@ -5,6 +5,16 @@ import Form from "./Form";
 import BookList from "./BookList";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: [],
+      searchInput: "",
+      printFilter: "",
+      bookFilter: "",
+    };
+  }
+
   render() {
     // create sample test data
     const books = [
