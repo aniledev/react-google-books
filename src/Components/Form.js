@@ -45,6 +45,7 @@ export default class Form extends Component {
               name="search"
               id="search"
               value={this.state.search}
+              onChange={(e) => this.searchChanged(e.target.value)}
               required
             />
             <button type="submit">
@@ -60,6 +61,7 @@ export default class Form extends Component {
                 name="print-type"
                 id="print-type"
                 value={this.state.printType}
+                onChange={(e) => this.printTypeChanged(e.target.value)}
               >
                 <option value="All" selected>
                   All
@@ -78,6 +80,7 @@ export default class Form extends Component {
                 name="book-type"
                 id="book-type"
                 value={this.state.bookType}
+                onChange={(e) => this.bookTypeChanged(e.target.value)}
               >
                 <option value="No Filter" selected>
                   No Filter
