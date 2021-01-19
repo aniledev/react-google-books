@@ -11,7 +11,7 @@ export default class Form extends Component {
       bookType: "",
     };
   }
-  searchInput;
+
   render() {
     return (
       <div className="Form">
@@ -25,6 +25,7 @@ export default class Form extends Component {
               placeholder="Enter book title"
               name="search"
               id="search"
+              value={this.state.search}
               required
             />
             <button type="submit">
@@ -36,7 +37,11 @@ export default class Form extends Component {
               <label htmlFor="print-type">
                 <strong>Print Type: </strong>
               </label>
-              <select name="print-type" id="print-type">
+              <select
+                name="print-type"
+                id="print-type"
+                value={this.state.printType}
+              >
                 <option value="All" selected>
                   All
                 </option>
@@ -50,7 +55,11 @@ export default class Form extends Component {
               <label htmlFor="book-type">
                 <strong>Book Type: </strong>
               </label>
-              <select name="book-type" id="book-type">
+              <select
+                name="book-type"
+                id="book-type"
+                value={this.state.bookType}
+              >
                 <option value="No Filter" selected>
                   No Filter
                 </option>
