@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import "../Styles/Form.css";
 
 export default class Form extends Component {
+  // add a constructor to initialize state for controlled form component
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: "",
+      printType: "All",
+      bookType: "",
+    };
+  }
+  searchInput;
   render() {
     return (
       <div className="Form">
