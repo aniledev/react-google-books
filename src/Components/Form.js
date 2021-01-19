@@ -63,13 +63,11 @@ export default class Form extends Component {
                 value={this.state.printType}
                 onChange={(e) => this.printTypeChanged(e.target.value)}
               >
-                <option value="All" selected>
+                <option value="all" selected>
                   All
                 </option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-                <option value="Option 4">Option 4</option>
+                <option value="books">Books</option>
+                <option value="magazines">Magazines</option>
               </select>
             </div>
             <div className="Form_book">
@@ -82,10 +80,9 @@ export default class Form extends Component {
                 value={this.state.bookType}
                 onChange={(e) => this.bookTypeChanged(e.target.value)}
               >
-                <option value="No Filter" selected>
+                <option value="" selected>
                   No Filter
                 </option>
-                <option value="">No Filter</option>
                 <option value="partial">Partial</option>
                 <option value="full">Full</option>
                 <option value="ebooks">eBooks</option>
