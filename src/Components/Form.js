@@ -25,9 +25,9 @@ export default class Form extends Component {
     });
   }
 
-  bookTypeChanged(book) {
+  bookTypeChanged(bookType) {
     this.setState({
-      book,
+      bookType,
     });
   }
 
