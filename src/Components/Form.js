@@ -31,25 +31,30 @@ export default class Form extends Component {
     });
   }
 
+  formatQueryParams(parameters) {
+    const queryItems = Object.keys(parameters).map(
+      (key) => `${key}=${parameters[key]}`
+    );
+    return queryItems.join("&");
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const parameters = (({ search, printType, bookType }) => ({
+    // create object of search terms and filters
+    const BASE_URL = "https://www.googleapis.com/books/v1/volumes?";
+
+    const parameters = (({ search, printType, bookType, key }) => ({
       search,
       printType,
       bookType,
+      key: "AIzaSyDcxqxraM3gEciVrsqWwQrpAlv5akq_dlk",
     }))(this.state);
 
-    const URL = "https://www.googleapis.com/books/v1/volumes?";
-    const options = {
-      method: "GET",
-      body: JSON.stringify(parameters),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer AIzaSyDcxqxraM3gEciVrsqWwQrpAlv5akq_dlk",
-      },
-    };
+    console.log(parameters);
+    // write a method to format the query parameters into correct syntax
+    this.formatQueryParams(parameters);
 
-    fetch(URL, options)
+    fetch(BASE_URL)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");
