@@ -76,7 +76,7 @@ export default class App extends Component {
       <div className="App">
         <SiteHeader />
         <Form />
-        <BookList books={books} />
+        <BookList books={this.state.books} />
       </div>
     );
   }
