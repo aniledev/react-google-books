@@ -7,7 +7,7 @@ export default class Form extends Component {
     super(props);
     this.state = {
       search: "",
-      printType: "All",
+      printType: "all",
       bookType: "",
     };
   }
