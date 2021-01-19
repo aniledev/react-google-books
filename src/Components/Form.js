@@ -85,10 +85,12 @@ export default class Form extends Component {
                 <option value="No Filter" selected>
                   No Filter
                 </option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-                <option value="Option 4">Option 4</option>
+                <option value="">No Filter</option>
+                <option value="partial">Partial</option>
+                <option value="full">Full</option>
+                <option value="ebooks">eBooks</option>
+                <option value="free-ebooks">Free eBooks</option>
+                <option value="paid-ebooks">Paid eBooks</option>
               </select>
             </div>
           </div>
