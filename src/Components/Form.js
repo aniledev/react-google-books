@@ -69,7 +69,7 @@ export default class Form extends Component {
   render() {
     return (
       <div className="Form">
-        <form>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           <div className="Form_search">
             <label htmlFor="search">
               <strong>Search: </strong>
