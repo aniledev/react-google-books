@@ -12,6 +12,25 @@ export default class Form extends Component {
     };
   }
 
+  // write methods to update the state when each of the input values are changed
+  searchChanged(search) {
+    this.setState({
+      search,
+    });
+  }
+
+  printTypeChanged(printType) {
+    this.setState({
+      printType,
+    });
+  }
+
+  bookTypeChanged(book) {
+    this.setState({
+      book,
+    });
+  }
+
   render() {
     return (
       <div className="Form">
