@@ -31,6 +31,41 @@ export default class Form extends Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    const parameters = (({ search, printType, bookType }) => ({
+      search,
+      printType,
+      bookType,
+    }))(this.state);
+
+    const URL = "https://www.googleapis.com/books/v1/volumes?";
+    const options = {
+      method: "GET",
+      body: JSON.stringify(parameters),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer AIzaSyDcxqxraM3gEciVrsqWwQrpAlv5akq_dlk",
+      },
+    };
+
+    fetch(URL, options)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Something went wrong, please try again later");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        this.props.updateBooks(data);
+      })
+      .catch((err) => {
+        this.setState({
+          error: err.message,
+        });
+      });
+  }
+
   render() {
     return (
       <div className="Form">

@@ -15,6 +15,12 @@ export default class App extends Component {
     };
   }
 
+  handleUpdateBooks(data) {
+    this.setState({
+      books: data,
+    });
+  }
+
   render() {
     // create sample test data
     const books = [
@@ -75,7 +81,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <SiteHeader />
-        <Form />
+        <Form updateBooks={(data) => this.updateBooks(data)} />
         <BookList books={this.state.books} />
       </div>
     );
