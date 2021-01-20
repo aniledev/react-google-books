@@ -59,15 +59,20 @@ export default class Form extends Component {
     // write a method to format the query parameters into correct syntax
     this.formatQueryParams(parameters);
 
-    fetch(FETCH_URL, { mode: "no-cors" })
+    //
+    fetch(FETCH_URL, {
+      mode: "no-cors",
+    })
       .then((res) => {
         if (!res.ok) {
+          console.log(res);
           throw new Error("Something went wrong, please try again later");
         }
-        return res.json();
+        return res;
       })
+      .then((res) => res.json())
       .then((data) => {
-        this.props.updateBooks(data);
+        console.log(data);
       })
       .catch((err) => {
         this.setState({

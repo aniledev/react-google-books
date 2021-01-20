@@ -81,7 +81,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <SiteHeader />
-        <Form updateBooks={(data) => this.updateBooks(data)} />
+        <Form updateBooks={(data) => this.handleUpdateBooks(data)} />
         <BookList books={this.state.books} />
       </div>
     );
