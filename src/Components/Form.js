@@ -41,20 +41,25 @@ export default class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
     // create object of search terms and filters
-    const BASE_URL = "https://www.googleapis.com/books/v1/volumes?";
+    const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
 
     const parameters = (({ search, printType, bookType, key }) => ({
-      search,
+      q: search,
       printType,
-      bookType,
+      filter: bookType,
       key: "AIzaSyDcxqxraM3gEciVrsqWwQrpAlv5akq_dlk",
     }))(this.state);
 
-    console.log(parameters);
+    const queryString = this.formatQueryParams(parameters);
+
+    const FETCH_URL = BASE_URL + "?" + queryString;
+
+    console.log(FETCH_URL);
+
     // write a method to format the query parameters into correct syntax
     this.formatQueryParams(parameters);
 
-    fetch(BASE_URL)
+    fetch(FETCH_URL, { mode: "no-cors" })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");
