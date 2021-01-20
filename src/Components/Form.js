@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../Styles/Form.css";
 
+// UNABLE TO RECEIVE PROPER RESPONSE FROM API. RECEIVING 200 STATUS BUT STATE IS NOT BEING UPDATED WITH THE DATA OBJECT
+
 export default class Form extends Component {
   // add a constructor to initialize state for controlled form component
   constructor(props) {
@@ -59,7 +61,6 @@ export default class Form extends Component {
     // write a method to format the query parameters into correct syntax
     this.formatQueryParams(parameters);
 
-    //
     fetch(FETCH_URL, {
       mode: "no-cors",
     })
@@ -72,7 +73,7 @@ export default class Form extends Component {
       })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        this.props.updateBooks(data);
       })
       .catch((err) => {
         this.setState({
